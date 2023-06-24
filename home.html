@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="path/to/styles.css">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+<header class="bg-light">
+  <span>Food Blog</span>
+  <nav>
+    <ul class="nav">
+      <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Recipes</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Lifestyles</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Videos</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="app">
+    <aside id="photos">
+      <img src="images/chili.jpg" alt="White Chicken Chili" width="180" class="img-fluid">
+    </aside>
+    <h2 class="text-uppercase mt-5">Comments</h2>
+    <div class="comments">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="post" v-for="(post, index) in posts" :key="index">
+            <span class="author">{{ post.author }}</span> —
+            <span class="date">{{ post.date }}</span>
+            <span class="reply">REPLY</span>
+            <p>{{ post.content }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<footer class="fixed-bottom bg-light">
+  <p>&copy; COPYRIGHT FOOD BLOG</p>
+</footer>
+
+<script src="path/to/vue.js"></script>
+<script src="path/to/Comments.vue"></script>
+</body>
+</html>
